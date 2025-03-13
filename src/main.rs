@@ -1,10 +1,11 @@
 mod utils;
 use utils::console_io::*;
-
-use std::io::{self};
+use utils::serialize_deserialize::*;
 use rustworkshop::*;
 
 fn main() {
+    serialize_deserialize_examples();
+ 
     text_to_console("Please enter your number: ");
    
     let mut number_str = String::new();
