@@ -22,3 +22,7 @@ pub fn end_program(text: &str) {
     let mut dummy = String::new();
     io::stdin().read_line(&mut dummy).unwrap();
 }
+
+pub fn input_from_console(input: &mut String) {
+    io::stdin().read_line(input).unwrap();
+}

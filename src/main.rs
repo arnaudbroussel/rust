@@ -5,11 +5,10 @@ use std::io::{self};
 use rustworkshop::*;
 
 fn main() {
-    let mut number_str = String::new();
     text_to_console("Please enter your number: ");
-
-    // Read input correctly
-    io::stdin().read_line(&mut number_str).unwrap();
+   
+    let mut number_str = String::new();
+    input_from_console(&mut number_str);
 
     // Parse the input safely
     let number: i32 = match number_str.trim().parse() {
