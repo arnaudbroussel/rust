@@ -1,3 +1,6 @@
+mod utils;
+use utils::console_io::*;
+
 use std::io::{self};
 use rustworkshop::*;
 
