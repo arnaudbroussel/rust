@@ -16,12 +16,12 @@ struct Address {
 
 pub fn serialize_deserialize_examples() {
     let person = Person {
-        name: "Broussel".to_string(),
+        name: "Ch' Brouss".to_string(),
         age: 30,
         address: Address {
-            city: "Granollers".to_string(),
+            city: "Quekpart".to_string(),
             postcode: "08402".to_string(),
-            street: "Lope de Vega, 4, 2-1".to_string()
+            street: "Cul de sac, 1, 2-3".to_string()
         }
     };
 
