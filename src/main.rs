@@ -1,6 +1,7 @@
 mod utils;
 use utils::console_io::*;
 use utils::primitive_types::*;
+use utils::compare_with_csharp::*;
 use utils::serialize_deserialize::*;
 use rustworkshop::*;
 
@@ -12,6 +13,9 @@ fn menu(){
     text_ln_to_console("*** MENU ***\n");
     text_ln_to_console("(1) Serialize Deserialize");
     text_ln_to_console("(2) Primitive types");
+    text_ln_to_console("(3) Fibonacci");
+    text_ln_to_console("(4) Sum of Large Array (Memory & Loop Performance)");
+    text_ln_to_console("(5) Multithreading Test)");
     text_ln_to_console("(...) n/a");
     text_ln_to_console("(9) Original code");
     text_ln_to_console("(0) Exit");
@@ -24,9 +28,16 @@ fn menu(){
     match menu_choice.trim() {
         "1" => serialize_deserialize_examples(),
         "2" => work_with_primitive_types(),
+        "3" => run_fibonacci(),
+        "4" => sum_of_large_array(),
+        "5" => multi_threading(),
         "9" => original_code(),
-        _ => end_program("\nProgram finished. Press Enter to exit..."),
-    }    
+        _ => end_program("\nPress Enter to exit..."),
+    }
+
+    pause_program("\nPlease press Enter to come back to menu.\n");
+    
+    menu();
 }
 
 fn original_code(){
