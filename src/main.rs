@@ -4,18 +4,22 @@ use utils::primitive_types::*;
 use utils::compare_with_csharp::*;
 use utils::serialize_deserialize::*;
 use rustworkshop::*;
+use crate::utils::ownership_borrowing::ownership_borrowing;
 
 fn main() {
-    menu();
+    loop {
+        menu();
+    }
 }
 
-fn menu(){
+fn menu() {
     text_ln_to_console("*** MENU ***\n");
     text_ln_to_console("(1) Serialize Deserialize");
     text_ln_to_console("(2) Primitive types");
     text_ln_to_console("(3) Fibonacci");
     text_ln_to_console("(4) Sum of Large Array (Memory & Loop Performance)");
-    text_ln_to_console("(5) Multithreading Test)");
+    text_ln_to_console("(5) Multithreading Test");
+    text_ln_to_console("(6) Ownership adn borrowing");
     text_ln_to_console("(...) n/a");
     text_ln_to_console("(9) Original code");
     text_ln_to_console("(0) Exit");
@@ -31,13 +35,12 @@ fn menu(){
         "3" => run_fibonacci(),
         "4" => sum_of_large_array(),
         "5" => multi_threading(),
+        "6" => ownership_borrowing(),
         "9" => original_code(),
         _ => end_program("\nPress Enter to exit..."),
     }
 
     pause_program("\nPlease press Enter to come back to menu.\n");
-    
-    menu();
 }
 
 fn original_code(){
