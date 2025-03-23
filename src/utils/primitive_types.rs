@@ -1,3 +1,16 @@
+#[derive(Debug)]
+struct Coffee {
+    id: i32,
+    name: String,
+    temp: TempCategory
+}
+
+#[derive(Debug)]
+enum TempCategory {
+    HOT(Option<f64>),
+    ICED(Option<f64>)
+}
+
 pub fn work_with_primitive_types() {
     // Integers
     let my_num: i32 = 32;
@@ -61,7 +74,7 @@ pub fn work_with_primitive_types() {
         println!("number_from_array: {}", number_from_array);
     }
     
-    let mut same_value_array: [i32; 100] = [10; 100]; // fill an array of i32 with 1000 times the value 10
+    let mut same_value_array: [i32; 100] = [10; 100]; // fill an array of i32 with 100 times the value 10
     println!("\nsame_value_array {:?}", same_value_array);
     println!("First element of same_value_array {}", same_value_array[0]);
     println!("Last element of same_value_array {}", same_value_array[same_value_array.len() - 1]);
@@ -70,4 +83,32 @@ pub fn work_with_primitive_types() {
     same_value_array[0] = 99;
     same_value_array[same_value_array.len() - 1] = 88;
     println!("\nsame_value_array {:?}", same_value_array);
+    
+    // Structs
+    let mut my_coffee: Coffee = Coffee {
+        id: 10,
+        name: String::from("Café Jules"),
+        temp: TempCategory::HOT(None)
+    };
+    
+    my_coffee.id = 1000;
+    
+    let  id: i32 = 10;
+    let coffee_with_temp: Coffee = Coffee{
+        id,
+        name: String::from("Bacot"),
+        temp: TempCategory::HOT(Some(103.2))
+    };
+    
+    println!("Coffee: {:?}", my_coffee);
+    println!("Coffee id and name: {}/{}", my_coffee.id, my_coffee.name);
+    println!("Coffee temp: {:?}", my_coffee.temp);
+    println!("Coffee ({}) with temp: {:?}", coffee_with_temp.name, coffee_with_temp.temp);
+    
+    // Combining structs
+    let combined: Coffee =Coffee{
+        id:2000,
+        ..coffee_with_temp
+    };
+    println!("Combined coffee: {:?}", combined);
 }
