@@ -1,4 +1,6 @@
 mod utils;
+mod extract_error_codes;
+use extract_error_codes::extract_error_codes::*;
 use utils::console_io::*;
 use utils::primitive_types::*;
 use utils::compare_with_csharp::*;
@@ -20,6 +22,7 @@ fn menu() {
     text_ln_to_console("(4) Sum of Large Array (Memory & Loop Performance)");
     text_ln_to_console("(5) Multithreading Test");
     text_ln_to_console("(6) Ownership adn borrowing");
+    text_ln_to_console("(7) Extract Error Codes from SBCA service");
     text_ln_to_console("(...) n/a");
     text_ln_to_console("(9) Original code");
     text_ln_to_console("(0) Exit");
@@ -36,6 +39,7 @@ fn menu() {
         "4" => sum_of_large_array(),
         "5" => multi_threading(),
         "6" => ownership_borrowing(),
+        "7" => extract_error_codes(),
         "9" => original_code(),
         _ => end_program("\nPress Enter to exit..."),
     }
